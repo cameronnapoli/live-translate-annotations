@@ -117,11 +117,11 @@ io.on('connection', function(client) {
           `\n\nReached transcription time limit, press Ctrl+C\n`);
 
         if (data.results[0] && data.results[0].isFinal) {
-          translateText(data.results[0].alternatives[0].transcript, targetLanguage)
-            .then(function(translation) {
-              client.emit('speechDataWithTranslation', data, translation);
-            });
-
+          translate.translate(data.results[0].alternatives[0].transcript, 'de').then(results => {
+            const translation = results[0];
+            console.log(`Text: ${data.results[0].alternatives[0].transcript}\nTranslation: ${translation}`);
+            client.emit('speechDataWithTranslation', data, translation);
+          }).catch(err => console.error('ERROR TRANSLATING:', err));
         } else {
           client.emit('speechDataWithTranslation', data, "");
         }
