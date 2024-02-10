@@ -10,6 +10,7 @@ const speech = require('@google-cloud/speech');
 const { Translate } = require('@google-cloud/translate');
 
 // Initialize speech to text API
+// Note: Speech recognition is configured for English input to be translated into German.
 const speechClient = new speech.SpeechClient();
 const projectId = 'speech-translating-annotation';
 
@@ -29,6 +30,7 @@ const io = require('socket.io')(server);
 const encoding = 'LINEAR16';
 const sampleRateHertz = 16000;
 const languageCode = 'en-US'; //en-US
+// Note: This application is configured to recognize English speech and translate it into German.
 
 const request = {
   config: {
