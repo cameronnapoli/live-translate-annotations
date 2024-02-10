@@ -131,7 +131,7 @@ class App extends Component {
     return (
       <div className="wrapper">
         <div id="header">
-          <span id="title">Speech Annotation &amp; Translation</span>
+          <span id="title">Live Translate Annotations</span>
         </div>
 
         <div id="content">
