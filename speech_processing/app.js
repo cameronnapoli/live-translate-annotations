@@ -105,7 +105,8 @@ io.on('connection', function(client) {
     }
   });
 
-  function startRecognitionStream(client, targetLanguage) {
+  function startRecognitionStream(client) {
+    let targetLanguage = 'de';
     console.log("  startRecognitionStream");
     recognizeStream = speechClient.streamingRecognize(request)
       .on('error', console.error)
