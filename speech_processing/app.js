@@ -143,6 +143,9 @@ io.on('connection', function(client) {
   }
 
   function translateText(text, targetLanguage) {
+    // Ensure targetLanguage is supported, default to German ('de') if unsupported
+    const supportedLanguages = ['de', 'en', 'es', 'fr', 'it', 'ja', 'ru', 'zh-CN']; // Example list of supported languages
+    targetLanguage = supportedLanguages.includes(targetLanguage) ? targetLanguage : 'de';
     return translate.translate(text, targetLanguage).then(results => {
         const translation = results[0];
         console.log(`Text: ${text}\nTranslation: ${translation}`);

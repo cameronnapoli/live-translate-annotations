@@ -16,6 +16,7 @@ const options = [
   { value: 'ar', label: "Arabic" },
   { value: 'zh-CN', label: "Chinese (Simplified)" },
   { value: 'is', label: "Icelandic" },
+  { value: 'de', label: "German" },
   { value: 'it', label: "Italian" },
   { value: 'ru', label: "Russian" }
 ];
