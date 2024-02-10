@@ -1,5 +1,5 @@
 {
-  "name": "LiveTranslateAnnotations",
+  "name": "live-translate-annotations",
   "version": "1.0.0",
   "description": "Live translate annotations using socket.io and Google Cloud.",
   "main": "app.js",
